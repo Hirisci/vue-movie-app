@@ -35,3 +35,21 @@ h6 {
 small {
   font-size: 0.6rem;
 }
+
+$units: (
+  '-xxs': calc(0.125 * var(--space-unit)),
+  '-xs': calc(0.25 * var(--space-unit)),
+  '-sm': calc(0.5 * var(--space-unit)),
+  '-md': calc(1 * var(--space-unit)),
+  '-lg': calc(1.5 * var(--space-unit)),
+  '-xl': calc(2.25 * var(--space-unit)),
+  '-xxl': calc(3 * var(--space-unit)),
+);
+
+:root {
+  $prefix: 'fs';
+
+  @each $name, $unit in $units {
+    --#{$prefix}#{$name}: #{$unit};
+  }
+}
